@@ -1,0 +1,57 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management System : Student Login</title>
+    <link rel="stylesheet" href="{% static 'css/style1.css' %}">
+</head>
+<body>
+
+<section>
+  <div class="imgBx">
+      <img src="{% static 'images/college2.jpg' %}">
+  </div>
+  <div class="contentBx">
+      <div class="formBx">
+          <h2>Student Login</h2>
+          <form method="post">
+              {% csrf_token %}
+              <div class="inputBx">
+                  <span>Email ID</span>
+                  <input type="email" name="Email" placeholder="Enter Email ID" required>
+              </div>
+
+              <div class="inputBx">
+                  <span>Password</span>
+                  <input type="password" name="Password" placeholder="Enter Password" required>
+              </div>
+
+              <div class="inputBx">
+                  <input type="submit" value="Sign in" name="">
+              </div>
+
+              <div class="inputBx">
+                 <center><a href="{% url 'index' %}">Go Back To Home</a> </center>
+              </div>
+          </form>
+
+      </div>
+  </div>
+</section>
+
+{% if error == "no" %}
+<script>
+    alert('Logged In Successfully');
+    window.location=('{% url 'user_home' %}');
+</script>
+{% endif %}
+
+{% if error == "yes" %}
+<script>
+    alert('Invalid Credentials, Please try again');
+</script>
+{% endif %}
+
+</body>
+</html>

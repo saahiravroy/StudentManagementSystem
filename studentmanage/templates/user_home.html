@@ -1,0 +1,10 @@
+{% extends 'usernav.html' %}
+{% block main  %}
+
+<div class="card shadow mt-5">
+    <div class="card-body">
+        <center><h5 class="p-2">Hello {{request.user.first_name}} !! Welcome to Student Panel.</h5></center>
+    </div>
+</div>
+
+{% endblock %}

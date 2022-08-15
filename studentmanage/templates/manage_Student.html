@@ -1,0 +1,43 @@
+{% extends 'admin_base.html' %}
+{% block main  %}
+
+<div class="card p-2 shadow mt-5">
+    <div class="card-body">
+        <h5 class="p-2" style="border-bottom: 2px solid green;">Manage Student</h5>
+
+        <div class="container-fluid mt-3">
+            <table class="table table-bordered table-sm">
+                <thead>
+                <tr>
+                    <th>S No.</th>
+                    <th>Student ID</th>
+                    <th>Student Class</th>
+                    <th>Student Name</th>
+                    <th>Student Email</th>
+                    <th>Admission Date</th>
+                    <th>Action</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for i in student %}
+                <tr>
+                    <td>{{forloop.counter}}</td>
+                    <td>{{i.StuID}}</td>
+                    <td>{{i.classs.ClassName}} [{{i.classs.Section}}]</td>
+                    <td>{{i.user.first_name}}</td>
+                    <td>{{i.user.username}}</td>
+                    <td>{{i.DateofAdmission}}</td>
+                    <td style="width: 120px;">
+                        <a href="{% url 'editStudent' i.id %}" class="btn btn-primary btn-sm">Edit</a>
+                        <a onclick="return confirm('Are you sure to Delete')" href="{% url 'deleteStudent' i.user.id %}"
+                           class="btn btn-sm btn-danger">Delete</a>
+                    </td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

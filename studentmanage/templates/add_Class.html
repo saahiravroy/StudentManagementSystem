@@ -1,0 +1,50 @@
+{% extends 'admin_base.html' %}
+{% block main  %}
+
+<form method="POST">
+    {% csrf_token %}
+    <div class="card p-2 shadow mt-5">
+        <div class="card-body">
+            <h5 class="p-2" style="border-bottom: 2px solid green;">Class Details</h5>
+            <div class="form-row">
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <label>Class Name</label>
+                        <input type="text" name="ClassName"  placeholder="Enter Class Name" required class="form-control">
+                    </div>
+                </div>
+
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <label>Section</label>
+                        <select name="Section" class="form-control" required>
+                            <option value="">Select Section</option>
+                            <option value="A">A</option>
+                            <option value="B">B</option>
+                            <option value="C">C</option>
+                            <option value="D">D</option>
+                            <option value="E">E</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <input type="submit" value="Submit" class="btn btn-primary">
+        </div>
+    </div>
+</form>
+
+
+{% if error == "no" %}
+<script>
+    alert('New Class has been Added Successfully.');
+    window.location=('{% url 'manage_Class' %}');
+</script>
+{% endif %}
+
+{% if error == "yes" %}
+<script>
+    alert('Something Went Wrong. Please try again');
+</script>
+{% endif %}
+
+{% endblock %}

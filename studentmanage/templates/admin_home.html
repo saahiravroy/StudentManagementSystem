@@ -1,0 +1,53 @@
+{% extends 'admin_base.html' %}
+{% block main  %}
+
+<br><br><br><br>
+<div class="row mt-5">
+    <div class="col-sm-3 p-2">
+        <div class="card shadow">
+            <div class="card-body">
+            <h5 class="text-success">Total Class</h5>
+            <h5>{{totalclass}}</h5>
+        </div>
+        <div class="card-footer">
+            <a href="{% url 'manage_Class' %}">View Details >></a>
+        </div>
+        </div>
+    </div>
+    <div class="col-sm-3 p-2">
+        <div class="card shadow">
+            <div class="card-body">
+                <h5 class="text-success">Total Student</h5>
+                <h5>{{totalstudent}}</h5>
+            </div>
+            <div class="card-footer">
+                <a href="{% url 'manage_Student' %}">View Details >></a>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-3 p-2">
+        <div class="card shadow">
+            <div class="card-body">
+            <h5 class="text-success">Total Class Notice</h5>
+            <h5>{{totalnotice}}</h5>
+            </div>
+            <div class="card-footer">
+                <a href="{% url 'manage_Notice' %}">View Details >></a>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-3 p-2">
+        <div class="card shadow">
+            <div class="card-body">
+            <h5 class="text-success">Total Public Notice</h5>
+            <h5> {{totalpnotice}}</h5>
+            </div>
+            <div class="card-footer">
+                <a href="{% url 'manage_PublicNotice' %}">View Details >></a>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}

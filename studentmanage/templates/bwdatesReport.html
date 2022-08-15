@@ -1,0 +1,44 @@
+{% extends 'admin_base.html' %}
+{% block main  %}
+
+<div class="card shadow mt-5">
+    <div class="card-body">
+        <h5 class="p-2" style="border-bottom: 2px solid green;">Datewise Report Details</h5>
+        <div class="container-fluid mt-2">
+            <h5 align="center" style="color:blue">Report from <span style="color:red">{{fd}}</span> to <span
+                    style="color:red">{{td}}</span></h5>
+            <table class="table table-bordered table-sm mt-5">
+                <thead>
+                <tr>
+                    <th>S No.</th>
+                    <th>Student Id</th>
+                    <th>Class</th>
+                    <th>Student Name</th>
+                    <th>Student Email</th>
+                    <th>Admission Date</th>
+                    <th>Action</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for i in student %}
+                <tr>
+                    <td>{{forloop.counter}}</td>
+                    <td>{{i.StuID}}</td>
+                    <td>{{i.classs.ClassName}} [{{i.classs.Section}}]</td>
+                    <td>{{i.user.first_name}}</td>
+                    <td>{{i.user.username}}</td>
+                    <td>{{i.DateofAdmission}}</td>
+                    <td><a href="{% url 'viewStudentDetails' i.id %}">View</a></td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="8"> No record found against this search</td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

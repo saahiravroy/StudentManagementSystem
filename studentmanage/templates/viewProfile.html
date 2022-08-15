@@ -1,0 +1,141 @@
+{% extends 'usernav.html' %}
+{% block main  %}
+
+<div class="container mt-5">
+
+    <div class="col-sm-12 p-2">
+
+        <div class="card" style="background-color: #b5ac88f2">
+            <div class="card-body">
+                <h4 class="card-title text-center">{{student.user.first_name}}</h4>
+                 <hr>
+
+
+                <DIV class="row">
+                    <div class="col-md-3 offset-3">
+                        <b>Profile Pic : </b>
+                    </div>
+
+                    <div class="col-md-3" style="text-transform: capitalize">
+                        <img src="{{student.Image.url}}" class="rounded-circle" width="100" height="70">
+                    </div>
+                </DIV>
+                <hr>
+
+                <DIV class="row">
+                    <div class="col-md-3 offset-3">
+                        <b>Student ID : </b>
+                    </div>
+                    <div class="col-md-3">
+                        {{student.StuID}}
+                    </div>
+                </DIV>
+                <hr>
+
+                <DIV class="row">
+                    <div class="col-md-3 offset-3">
+                        <b>Email ID : </b>
+                    </div>
+                    <div class="col-md-3">
+                        {{student.user.username}}
+                    </div>
+                </DIV>
+                <hr>
+
+
+
+                <DIV class="row">
+                    <div class="col-md-3 offset-3">
+                        <b>Student Class/Section : </b>
+                    </div>
+                    <div class="col-md-3" style="text-transform: capitalize">
+                        {{student.classs.ClassName}} / [{{student.classs.Section}}]
+                    </div>
+                </DIV>
+                <hr>
+
+                <DIV class="row">
+                    <div class="col-md-3 offset-3">
+                        <b>Date of Birth : </b>
+                    </div>
+                    <div class="col-md-3" style="text-transform: capitalize">
+                        {{student.DOB}}
+                    </div>
+                </DIV>
+                <hr>
+
+                <DIV class="row">
+                    <div class="col-md-3 offset-3">
+                        <b>Gender : </b>
+                    </div>
+                    <div class="col-md-3" style="text-transform: capitalize">
+                        {{student.Gender}}
+                    </div>
+                </DIV>
+                <hr>
+
+                <DIV class="row">
+                    <div class="col-md-3 offset-3">
+                        <b>Father Name : </b>
+                    </div>
+                    <div class="col-md-3" style="text-transform: capitalize">
+                        {{student.FatherName}}
+                    </div>
+                </DIV>
+                <hr>
+
+                <DIV class="row">
+                    <div class="col-md-3 offset-3">
+                        <b>Mother Name : </b>
+                    </div>
+                    <div class="col-md-3" style="text-transform: capitalize">
+                        {{student.MotherName}}
+                    </div>
+                </DIV>
+                <hr>
+
+                <DIV class="row">
+                    <div class="col-md-3 offset-3">
+                        <b>Contact Number : </b>
+                    </div>
+                    <div class="col-md-3" style="text-transform: capitalize">
+                        {{student.ContactNumber}}
+                    </div>
+                </DIV>
+                <hr>
+
+                <DIV class="row">
+                    <div class="col-md-3 offset-3">
+                        <b>Alternate Contact Number : </b>
+                    </div>
+                    <div class="col-md-3" style="text-transform: capitalize">
+                        {{student.AltenateNumber}}
+                    </div>
+                </DIV>
+                <hr>
+
+                <DIV class="row">
+                    <div class="col-md-3 offset-3">
+                        <b>Address : </b>
+                    </div>
+                    <div class="col-md-3" style="text-transform: capitalize">
+                        {{student.Address}}
+                    </div>
+                </DIV>
+                <hr>
+
+                <DIV class="row">
+                    <div class="col-md-3 offset-3">
+                        <b>Date of Admission : </b>
+                    </div>
+                    <div class="col-md-3" style="text-transform: capitalize">
+                        {{student.DateofAdmission}}
+                    </div>
+                </DIV>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

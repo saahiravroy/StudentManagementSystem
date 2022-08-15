@@ -1,0 +1,41 @@
+{% extends 'admin_base.html' %}
+{% block main  %}
+
+<div class="card p-2 shadow mt-5">
+    <div class="card-body">
+        <h5 class="p-2" style="border-bottom: 2px solid green;">Manage Notice</h5>
+
+        <div class="container-fluid mt-3">
+            <table class="table table-bordered table-sm">
+                <thead>
+                <tr>
+                    <th>S No.</th>
+                    <th>Notice Title</th>
+                    <th>Class</th>
+                    <th>Section</th>
+                    <th>Notice Date</th>
+                    <th>Action</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for i in notice %}
+                <tr>
+                    <td>{{forloop.counter}}</td>
+                    <td>{{i.NoticeTitle}}</td>
+                    <td>{{i.classs.ClassName}}</td>
+                    <td>{{i.classs.Section}}</td>
+                    <td>{{i.CreationDate}}</td>
+                    <td style="width: 120px;">
+                        <a href="{% url 'editNotice' i.id %}" class="btn btn-primary btn-sm">Edit</a>
+                        <a onclick="return confirm('Are you sure to Delete')" href="{% url 'deleteNotice' i.id %}"
+                           class="btn btn-sm btn-danger">Delete</a>
+                    </td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
